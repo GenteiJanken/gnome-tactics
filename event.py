@@ -1,4 +1,4 @@
-class EventManage:
+class EventManager:
     def __init__(self):
         self.handlers = dict()     
         self.events = []
@@ -44,17 +44,26 @@ class EventManage:
 # key_up(keyid)
 # Called when a key is released
 
-# spell_cast(spellid, caster, targets)
+# spell_cast(spellid, caster, flags, targets)
 # When spell has been cast and the model updated, this is sent for reflection in view
 
-# resourceupdate(unit, resourceid, amount)
+# resourcechange(unit, resourceid, amount)
 # Update available amount of a resource (health, mana), for reflection in view
 
-# unit_summoned(mapx, mapy unit)
-# Notification that a unit has been successfully constructed
+# resourceset(unit, resourceid, amount)
+# Update available amount of a resource (health, mana), for reflection in view
+
+# spawn_entity(mapx, mapy, entity)
+# queue entity spawn event
+
+# spawned(mapx, mapy, unit, entity_type)
+# Notification that an entity has been successfully constructed
 
 # unit_kill(unit)
 # Notification that a unit has been killed
 
-# unit_moved(unit, dest)
+# move_to(unit, mapx, mapy) 
+# Attempt to move a Unit to given map coordinates
+
+# unit_moved(unit, mapx, mapy)
 # Notification that a unit has been moved to given map coordinates. 
